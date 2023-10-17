@@ -1,0 +1,57 @@
+@use "../mixins";
+.site-footer {
+   padding: 57px 0;
+   border-top: 1px solid #d9dbe9;
+}
+.footer__wrapper {
+   display: block;
+   text-align: center;
+}
+.footer__left {
+   display: flex;
+   flex-direction: column;
+}
+.footer__left a {
+   display: inline-block;
+   margin: 0 auto 17px;
+}
+.footer__span {
+   @include mixins.title-text(30px, 18px, 30px, #6f6c90);
+}
+.footer__form {
+   @include mixins.box(507px);
+   @include mixins.flex-box(row, space-between, center);
+   margin: 0 auto;
+   padding: 12px 17px;
+   border-radius: 60px;
+   border: 1px solid #eff0f6;
+   background-color: #fff;
+   box-shadow: 0px 8px 25px 0px #0d0a2c0f;
+}
+.footer__email {
+   border: none;
+   background-color: transparent;
+}
+.footer__btn {
+   display: inline-block;
+   width: 129px;
+   padding: 15px;
+   @include mixins.title-text(0, 16px, 18px, #fff);
+   text-align: center;
+   border-radius: 56px;
+   background-color: #4a3aff;
+   border: none;
+}
+@include mixins.mobile(1000px) {
+   .footer__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   .footer__left a {
+      margin-left: 0;
+   }
+   .footer__form {
+      margin-right: 0;
+   }
+}

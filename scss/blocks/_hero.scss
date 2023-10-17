@@ -1,0 +1,150 @@
+@use "../mixins";
+.hero {
+  padding: 55px 0 130px;
+}
+.hero__wrapper {
+  @include mixins.flex-box(column, space-between, center);
+  margin: 0 auto;
+  @include mixins.box(500px);
+  padding: 60px 15px 45px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid #dbdbdb;
+  box-shadow: 0px 0px 0px 4px #0000000d;
+}
+.hero__title {
+  @include mixins.fonts("Inter", 600);
+  @include mixins.title-text(5px, 32px, normal, #000);
+}
+.hero__text {
+  font-family: "Inter";
+  @include mixins.title-text(35px, 14px, normal, #000);
+}
+.hero__form {
+  display: block;
+  width: 100%;
+}
+.form__top {
+  @include mixins.flex-box(column, space-between, center);
+}
+.name,
+.surname,
+.email,
+.password,
+.repeat-password,
+.gender,
+.birthday {
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--placeholder-color);
+}
+.form__titles {
+  text-align: start;
+  padding: 0 5px;
+  @include mixins.title-text(0, 12px, normal, var(--legend-color));
+  @include mixins.fonts("Inter", 600);
+}
+.name__text,
+.surname__text,
+.email__text,
+.password__text,
+.rep-password__text,
+.date__text {
+  @include mixins.title-text(0, 12px, normal, var(--legend-color));
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+::placeholder {
+  @include mixins.title-text(0, 14px, normal, var(--placeholder-color));
+}
+fieldset {
+  position: relative !important;
+  width: 100%;
+}
+.error-span {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  @include mixins.title-text(0, 9px, normal, var(--span-color));
+}
+.email,
+.password,
+.repeat-password {
+  @include mixins.flex-box(row, space-between, center);
+}
+.email__btn,
+.password__btn,
+.rep-password__btn {
+  border: none;
+  background-color: transparent;
+  color: var(--eye-btn-color);
+}
+.email--birthday {
+  padding-right: 15px;
+}
+.gender {
+  position: relative;
+  padding: 16px 0;
+  border-radius: 8px;
+  background-image: url(../../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: top 15px right 15px;
+}
+.form__titles--active {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  padding: 0 5px;
+  color: #121826;
+  background-color: #fff;
+}
+.gender__select {
+  width: 94%;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+}
+.gender__select:focus {
+  overflow: hidden;
+}
+.form__end {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.form__text {
+  font-family: "Inter";
+  @include mixins.title-text(0, 14px, normal, #000);
+  margin-left: 12px;
+  text-align: start;
+}
+.form__subtex {
+  text-decoration: underline;
+}
+.form__btn {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  @include mixins.title-text(0, 28px, 28px, #fff);
+  border: none;
+  border-radius: 8px;
+  background-color: #2c28e1;
+}
+@include mixins.mobile(540px) {
+  .hero__wrapper {
+    padding: 60px 60px 45px;
+  }
+  .form__top {
+    flex-direction: row;
+    column-gap: 25px;
+    margin-bottom: 25px;
+  }
+  .name,
+  .surname {
+    margin-bottom: 0;
+  }
+}
